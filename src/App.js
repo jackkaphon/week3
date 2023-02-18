@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Test from './components/Test'
 
-function App() {
+export default function App() {
+  const [data, setdata] = useState([1, 2, 3, 4, 5, 6, 7])
+  const [data2, setdata2] = useState([
+    { name: 'jack', age: 27 },
+    { name: 'beer', age: 25 },
+    { name: 'Dy', age: 20 },
+    { name: 'Xai', age: 20 },
+  ])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Test data={data} data2={data2} />
     </div>
-  );
+  )
 }
-
-export default App;
